@@ -1,4 +1,4 @@
-const main = () => {
+export const api = () => {
   // data source
   const API_URL = "../DATA.json";
   // container
@@ -47,7 +47,3 @@ const main = () => {
 
   getData(API_URL);
 };
-
-// export default main;
-
-main();
