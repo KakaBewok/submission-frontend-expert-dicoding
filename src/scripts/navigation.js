@@ -1,4 +1,4 @@
-export const navigation = () => {
+const navigation = () => {
   // hamburger menu
   const hamburger = document.querySelector("#hamburger");
   const navMenu = document.querySelector("#nav-menu");
@@ -23,3 +23,5 @@ export const navigation = () => {
     }
   };
 };
+
+export default navigation;

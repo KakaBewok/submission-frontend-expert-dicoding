@@ -1,4 +1,4 @@
-export const api = () => {
+const api = () => {
   // data source
   const API_URL = "../DATA.json";
   // container
@@ -10,8 +10,8 @@ export const api = () => {
       const data = await res.json();
 
       showData(data.restaurants);
-    } catch {
-      alert("Sorry, server error!");
+    } catch (err) {
+      alert(err);
     }
   };
   const showData = (data) => {
@@ -47,3 +47,5 @@ export const api = () => {
 
   getData(API_URL);
 };
+
+export default api;
