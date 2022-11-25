@@ -1,9 +1,16 @@
-const common = require('./webpack.common');
-const { merge } = require('webpack-merge');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const common = require("./webpack.common");
+const { merge } = require("webpack-merge");
 
 module.exports = merge(common, {
-  mode: 'production',
-  devtool: 'source-map',
+  mode: "production",
+  devtool: "source-map",
+  output: {
+    filename: "[name]-[hash].js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
   module: {
     rules: [
       {
@@ -11,13 +18,18 @@ module.exports = merge(common, {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
-              presets: ['@babel/preset-env'],
+              presets: ["@babel/preset-env"],
             },
           },
         ],
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name]-[hash].css",
+    }),
+  ],
 });
