@@ -1,8 +1,8 @@
-// import "../styles/main.css";
-// import "regenerator-runtime";
+import "../styles/main.css";
+import "regenerator-runtime";
 
 const main = () => {
-  const API_URL = "../DATA.json";
+  const API_URL = "DATA.json";
   // container
   const cards = document.querySelector(".cards-wrapper");
 
