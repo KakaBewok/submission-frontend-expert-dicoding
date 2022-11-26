@@ -22,8 +22,8 @@ body {
 #navbar {
   background-color: white;
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -41,13 +41,12 @@ body {
 }
 .brand a {
   font-weight: 700;
-  font-size: 1.125rem /* 18px */;
+  font-size: 1.15rem /* 18px */;
   line-height: 1.75rem /* 28px */;
   color: var(--primary-color);
   text-decoration: none;
   display: block;
-  padding-top: 1.5rem /* 24px */;
-  padding-bottom: 1.5rem /* 24px */;
+  padding: 1.5rem 0.5rem;
 }
 .hamburger-menu {
   display: flex;
@@ -63,6 +62,8 @@ body {
 #hamburger {
   border: none;
   background-color: white;
+  width: 44px;
+  height: 44px;
 }
 
 button span {
@@ -112,8 +113,9 @@ button span:nth-child(3) {
   border-radius: 0.5rem /* 8px */;
   max-width: 250px;
   width: 100%;
-  right: 1rem /* 16px */;
+  right: 1rem;
   top: 100%;
+  /* border: 2px solid black; */
 }
 #nav-menu ul {
   display: block;
@@ -121,11 +123,10 @@ button span:nth-child(3) {
 }
 #nav-menu ul li a {
   font-weight: 550;
-  font-size: 1rem /* 16px */;
+  font-size: 1.1rem;
   line-height: 1.5rem /* 24px */;
   color: var(--dark-color);
-  padding-top: 0.5rem /* 8px */;
-  padding-bottom: 0.5rem /* 8px */;
+  padding: 1rem 0.5rem;
   margin-left: 2rem /* 32px */;
   margin-right: 2rem /* 32px */;
   display: flex;
@@ -239,38 +240,54 @@ button span:nth-child(3) {
   justify-content: center;
   align-items: center;
 }
-.footer-title {
-  font-size: 0.8rem;
+.footer-title div {
+  font-size: 0.9rem;
+  width: 100%;
 }
 .footer-title a {
+  font-size: 1rem;
+  width: 44px;
+  height: 44px;
   text-decoration: none;
   color: white;
 }
 
 /* shortcut to top */
 .to-top {
-  font-size: 44px;
   position: fixed;
   right: 1rem;
-  bottom: 2.1rem;
+  bottom: 3.7rem;
   background-color: transparent;
   backdrop-filter: blur(6px);
   border-radius: 50%;
-  padding: 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.35rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.3rem;
   transition: all 0.4s;
 }
 .to-top:hover {
   transform: translateY(10px);
 }
 .to-top a {
+  display: block;
   text-decoration: none;
+  width: 44px;
+  height: 44px;
 }
 
 /* skip to content */
 .skip-to-content {
+  font-size: 0.9rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
   position: absolute;
-  top: -10px;
-  left: -10px;
+  top: 4.4rem;
+  left: 1.5rem;
+  z-index: 99999999;
 }
 
 /* RESPONSIVE VIEWPORT */
@@ -356,4 +373,4 @@ button span:nth-child(3) {
 }
 
 
-/*# sourceMappingURL=app-006ba3941d3a042356a5.css.map*/
+/*# sourceMappingURL=app-051a63e63506c0df4f95.css.map*/

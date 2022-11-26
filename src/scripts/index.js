@@ -29,7 +29,7 @@ const main = () => {
                                 <img
                                   tabindex="0"
                                   src="${pictureId}"
-                                  alt="Image of ${name}"
+                                  alt="${name}"
                                 />
                                 <div class="card-body">
                                   <div class="card-city-wrapper">
@@ -71,6 +71,15 @@ const main = () => {
       toTop.classList.add("hidden");
     }
   };
+
+  // skip to content
+  const skipToContent = document.querySelector("#skip");
+  skipToContent.addEventListener("focus", () => {
+    skipToContent.classList.add("skip-to-content");
+  });
+  skipToContent.addEventListener("blur", () => {
+    skipToContent.classList.remove("skip-to-content");
+  });
 };
 
 main();
