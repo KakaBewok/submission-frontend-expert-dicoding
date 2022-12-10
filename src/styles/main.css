@@ -312,6 +312,7 @@ button span:nth-child(3) {
   .brand a {
     font-size: 1.6rem;
   }
+
   /* cards */
   #cards .cards-wrapper {
     max-width: 768px;
