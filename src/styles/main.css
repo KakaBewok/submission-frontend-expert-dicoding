@@ -1,5 +1,5 @@
 /* import font 'roboto' from google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
   --primary-color: #14b8a6;
@@ -16,7 +16,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 /* navbar - hamburger menu*/
 #navbar {
@@ -163,7 +163,7 @@ button span:nth-child(3) {
 /* cards */
 #cards .cards-title {
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   text-align: center;
   font-weight: 700;
   font-size: 1.4rem;
@@ -315,6 +315,9 @@ button span:nth-child(3) {
   /* cards */
   #cards .cards-wrapper {
     max-width: 768px;
+  }
+  #cards .cards-title {
+    margin-bottom: 3rem;
   }
   .cards-wrapper .card {
     width: 20rem /* 320px */;
