@@ -1,85 +1,31 @@
-import "../styles/main.css";
-import "regenerator-runtime";
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-useless-path-segments */
+import 'regenerator-runtime';
+import App from './views/app';
+import '../styles/main.css';
+import '../styles/responsive.css';
+import '../scripts/views/components/footer.js';
+import '../scripts/views/components/navbar.js';
+import '../scripts/views/components/hero.js';
+import '../scripts/views/components/content.js';
+import '../scripts/views/components/shortcut-to-top.js';
+import '../scripts/views/components/skip-to-content.js';
+import swRegister from './utils/sw-register';
 
-const main = () => {
-  const API_URL = "DATA.json";
-  // container
-  const cards = document.querySelector(".cards-wrapper");
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#nav-menu'),
+  content: document.querySelector('#cards-wrapper'),
+  header: document.querySelector('header'),
+  skipToContent: document.querySelector('#skip'),
+  toTop: document.querySelector('#to-top'),
+});
 
-  const getData = async (url) => {
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-      showData(data.restaurants);
-    } catch (err) {
-      alert(err);
-    }
-  };
-  const showData = (data) => {
-    cards.innerHTML = "";
-
-    data.forEach((dt) => {
-      const { name, description, pictureId, city, rating } = dt;
-
-      const dataList = document.createElement("main");
-
-      dataList.innerHTML = `
-                                <div tabindex="0" class="card">
-                                <img
-                                  tabindex="0"
-                                  src="${pictureId}"
-                                  alt="${name}"
-                                />
-                                <div class="card-body">
-                                  <div class="card-city-wrapper">
-                                    <div tabindex="0" class="card-city">${city}</div>
-                                  </div>
-                                  <div tabindex="0" class="card-rating">${rating} ⭐</div>
-                                  <div tabindex="0" class="card-name">${name}</div>
-                                  <p tabindex="0" class="card-desc">
-                                  ${description}
-                                  </p>
-                                </div>
-                                </div>
-              `;
-      cards.appendChild(dataList);
-    });
-  };
-  getData(API_URL);
-
-  // hamburger menu
-  const hamburger = document.querySelector("#hamburger");
-  const navMenu = document.querySelector("#nav-menu");
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("hamburger-active");
-    navMenu.classList.toggle("hidden");
-  });
-
-  // navbar fixed and shortcut to top
-  window.onscroll = () => {
-    const toTop = document.querySelector(".to-top");
-    const header = document.querySelector("header");
-    const fixedNav = header.offsetTop;
-
-    if (window.scrollY > fixedNav) {
-      header.classList.add("navbar-fixed");
-      toTop.classList.remove("hidden");
-    } else {
-      header.classList.remove("navbar-fixed");
-      toTop.classList.add("hidden");
-    }
-  };
-
-  // skip to content
-  const skipToContent = document.querySelector("#skip");
-  skipToContent.addEventListener("focus", () => {
-    skipToContent.classList.add("skip-to-content");
-  });
-  skipToContent.addEventListener("blur", () => {
-    skipToContent.classList.remove("skip-to-content");
-  });
-};
-
-main();
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});

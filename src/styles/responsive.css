@@ -1,0 +1,98 @@
+/* RESPONSIVE VIEWPORT */
+
+/* sm - phone landscape */
+@media (min-width: 640px) {
+  /* card */
+  #cards .cards-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  #cards .cards-wrapper {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem /* 24px */;
+    justify-content: center;
+  }
+  .cards-wrapper .card {
+    width: 16rem;
+  }
+  /* detail-restaurant */
+  .detail-restaurant {
+    grid-template-columns: auto 1fr;
+    /* background-color: red; */
+    padding: 2.7rem;
+    margin-top: 0.7rem;
+    border-radius: 0.475rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  .detail-restaurant .detail-title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .detail-restaurant .detail-overview {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+/* md - tablet */
+@media (min-width: 768px) {
+  /* navbar */
+  .brand a {
+    font-size: 1.7rem;
+  }
+
+  /* cards */
+  #cards .cards-wrapper {
+    max-width: 768px;
+  }
+  #cards .cards-title {
+    margin-bottom: 0.5rem;
+  }
+  .cards-wrapper .card {
+    width: 19rem /* 320px */;
+    margin-left: 1rem;
+  }
+}
+/* lg - desktop */
+@media (min-width: 1024px) {
+  /* navbar */
+  .brand a {
+    font-size: 1.95rem;
+  }
+  #nav-menu ul li a {
+    font-size: 1.2rem;
+  }
+  .hamburger-menu button {
+    display: none;
+  }
+  #nav-menu {
+    display: block;
+    position: static;
+    background-color: transparent;
+    max-width: 100%;
+    border-radius: 0px;
+    box-shadow: 0 0 #0000;
+    border: none;
+  }
+  #nav-menu ul {
+    display: flex;
+  }
+
+  /* hero */
+  .hero-image {
+    width: 100%;
+    height: 90vh;
+  }
+  /* cards */
+  #cards .cards-wrapper {
+    max-width: 100%;
+  }
+  .cards-wrapper .card {
+    width: 19rem;
+    margin-bottom: 1.5rem;
+  }
+}
