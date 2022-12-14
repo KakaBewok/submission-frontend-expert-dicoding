@@ -24,7 +24,7 @@ class NavbarElement extends HTMLElement {
                         <nav id="nav-menu" class="hidden">
                             <ul>
                                 <li><a href="#/home" class="home">Home</a></li>
-                                <li><a href="#" class="favorite">Favorite</a></li>
+                                <li><a href="#/favorite" class="favorite">Favorite</a></li>
                                 <li>
                                     <a
                                     href="https://www.linkedin.com/in/noprizal"
