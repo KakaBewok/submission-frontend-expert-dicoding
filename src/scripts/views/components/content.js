@@ -5,10 +5,10 @@ class ContentElement extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <section id="cards">
-            <div class="container">
+        <section id="cards" tabindex="0">
+            <div class="container" tabindex="0">
                 <h2 class="cards-title" tabindex="0">Explore Restaurant</h2>
-                <div class="cards-wrapper" id="cards-wrapper"></div>
+                <div class="cards-wrapper" id="cards-wrapper" tabindex="0"></div>
             </div>
         </section>
                         `;

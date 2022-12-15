@@ -248,10 +248,6 @@ footer p {
   text-align: center;
   color: #aaaaaa;
 }
-footer p a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
 
 /* shortcut to top */
 #to-top {
@@ -299,7 +295,7 @@ footer p a {
   max-width: 800px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px 50px;
+  gap: 18px 20px;
 }
 .detail-restaurant .detail-poster {
   width: 100%;
@@ -351,4 +347,7 @@ footer p a {
 .favorite_heading {
   color: #14b8a6;
   text-align: left;
+}
+ul li {
+  list-style: none;
 }

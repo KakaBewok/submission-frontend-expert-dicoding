@@ -5,8 +5,8 @@ class ShortcutToTopElement extends HTMLElement {
 
   render() {
     this.innerHTML = `
-            <div id="to-top">
-                <a href="#">
+            <div id="to-top" tabindex="0">
+                <a href="#" tabindex="0">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="icon icon-tabler icon-tabler-arrow-up-circle"

@@ -2,7 +2,12 @@
 /* eslint-disable operator-linebreak */
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
-import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import {
+  createRestaurantDetailTemplate,
+  // createRestaurantDetailFoodsTemplate,
+  // createRestaurantDetailDrinksTemplate,
+  // createRestaurantDetailReviewsTemplate,
+} from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
@@ -18,6 +23,13 @@ const Detail = {
     const detailRestaurant = await RestaurantSource.detailRestaurant(url.id);
     const detailRestaurantContainer =
       document.querySelector('#detail-restaurant');
+
+    // const template = [
+    //   createRestaurantDetailTemplate(detailRestaurant),
+    //   createRestaurantDetailFoodsTemplate(detailRestaurant),
+    //   createRestaurantDetailDrinksTemplate(detailRestaurant),
+    //   createRestaurantDetailReviewsTemplate(detailRestaurant),
+    // ];
 
     detailRestaurantContainer.innerHTML =
       createRestaurantDetailTemplate(detailRestaurant);

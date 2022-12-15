@@ -1,37 +1,87 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable comma-dangle */
+/* eslint-disable arrow-body-style */
 import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
      
-            <h2 class="detail-title">${restaurant.name}</h2>
-            <img class="detail-poster" src="${CONFIG.BASE_IMAGE_URL_SMALL}/${restaurant.pictureId}" alt="${restaurant.name}" />
+            <h2 class="detail-title" tabindex="0">${restaurant.name}</h2>
+            <img class="detail-poster" src="${CONFIG.BASE_IMAGE_URL_SMALL}/${
+  restaurant.pictureId
+}"         
+              alt="${restaurant.name}" tabindex="0" />
           
-        <div class="detail-info">
-            <h3>Informasi:</h3>
-            <h4>Alamat</h4>
-            <p>${restaurant.address}, ${restaurant.city}</p>
-            <h4>Menu</h4>
-            <p>1. ${restaurant.menus.foods[0].name}</p>
-            <p>2. ${restaurant.menus.foods[1].name}</p>
-            <p>3. ${restaurant.menus.drinks[0].name}</p>
-            <p>4. ${restaurant.menus.drinks[1].name}</p>
-            <h4>Rating</h4>
-            <p>${restaurant.rating} ⭐</p><br/>
-            <h3>Customer Reviews</h3>
-            <p class="name">- ${restaurant.customerReviews[0].name} -</p>
-            <p class="review">"${restaurant.customerReviews[0].review}"</p>
-            <p class="date">${restaurant.customerReviews[0].date}</p>
-            <br/>
+            <div class="detail-overview" tabindex="0">
+                <h3 tabindex="0">Description</h3>
+                <p tabindex="0">${restaurant.description}</p>
+            </div>
+
+            <div class="detail-info" tabindex="0">
+                <h3 tabindex="0">Informasi:</h3>
+                <h4 tabindex="0">Alamat</h4>
+                <p tabindex="0">${restaurant.address}, ${restaurant.city}</p>
+                <h4 tabindex="0">Rating</h4>
+                <p tabindex="0">${restaurant.rating} ⭐</p>
+                <h4 tabindex="0">Menu: </h4>
+                <h4 tabindex="0">Makanan</h4>
+                <ul>
+                    ${createRestaurantDetailFoodsTemplate(restaurant)}
+                </ul>
+                <h4 tabindex="0">Minuman</h4>
+                <ul>
+                    ${createRestaurantDetailDrinksTemplate(restaurant)}
+                </ul>
+            </div>
+
+            <div class="detail-info" tabindex="0">
+                <h3 tabindex="0">Reviews</h4>
+                <ul>
+                    ${createRestaurantDetailReviewsTemplate(restaurant)}
+                </ul>
+            </div>
             
-        </div>
-        <div class="detail-overview">
-        <h3>Description</h3>
-        <p>${restaurant.description}</p>
-            
-        </div>
 `;
 
+const createRestaurantDetailFoodsTemplate = (restaurant) => {
+  const foods = restaurant.menus.foods
+    .map(
+      (food, index) => `
+        <li tabindex="0">${index + 1}. ${food.name}</li>
+    `
+    )
+    .join('\n');
+  return foods;
+};
+
+const createRestaurantDetailDrinksTemplate = (restaurant) => {
+  const drinks = restaurant.menus.drinks
+    .map(
+      (drink, index) => `
+        <li tabindex="0">${index + 1}. ${drink.name}</li>
+    `
+    )
+    .join('\n');
+  return drinks;
+};
+
+const createRestaurantDetailReviewsTemplate = (restaurant) => {
+  const reviews = restaurant.customerReviews
+    .map(
+      (review) => `
+            <li class="name" tabindex="0">${review.name}</li>
+            <li class="review" tabindex="0">"${review.review}"</li>
+            <li class="date" tabindex="0">${review.date}</li>
+            <br/>
+            <hr/>
+            <br/>
+        `
+    )
+    .join('\n');
+  return reviews;
+};
+
 const createRestaurantItemTemplate = (restaurant) => `
-        <div tabindex="0" class="card">
+        <div class="card">
             <a href="/#/detail/${restaurant.id}">
             <img
                 tabindex="0"
@@ -56,13 +106,13 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createLikeButtonTemplate = () => `
             <button aria-label="like this movie" id="likeButton" class="like">
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i class="fa fa-heart-o" aria-hidden="true" tabindex="0"></i>
             </button>
 `;
 
 const createLikedButtonTemplate = () => `
             <button aria-label="unlike this movie" id="likeButton" class="like">
-                <i class="fa fa-heart" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true" tabindex="0"></i>
             </button>
 `;
 
@@ -71,4 +121,7 @@ export {
   createRestaurantItemTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createRestaurantDetailFoodsTemplate,
+  createRestaurantDetailDrinksTemplate,
+  createRestaurantDetailReviewsTemplate,
 };

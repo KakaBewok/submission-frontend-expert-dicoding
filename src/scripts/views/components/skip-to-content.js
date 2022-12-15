@@ -5,7 +5,7 @@ class SkipToContentElement extends HTMLElement {
 
   render() {
     this.innerHTML = `
-            <a href="#cards" id="skip">
+            <a href="#cards" id="skip" tabindex="0">
                 Skip to Content
             </a>
                           `;

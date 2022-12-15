@@ -5,8 +5,8 @@ class FooterElement extends HTMLElement {
 
   render() {
     this.innerHTML = `
-                    <footer>
-                      <p>All data from <a href="https://restaurant-api.dicoding.dev/" target="_blank" rel="noreferrer">API Restaurant Dicoding</a> - Noprizal</p>
+                    <footer tabindex="0">
+                      <p tabindex="0">Noprizal | 2022</p>
                     </footer>
                     `;
   }
