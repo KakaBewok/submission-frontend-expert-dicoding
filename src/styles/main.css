@@ -351,3 +351,8 @@ footer p {
 ul li {
   list-style: none;
 }
+a.resto-name {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}

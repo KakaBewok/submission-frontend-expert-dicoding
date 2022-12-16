@@ -95,7 +95,7 @@ const createRestaurantItemTemplate = (restaurant) => `
                 </div>
                 <div tabindex="0" class="card-rating">${restaurant.rating} ⭐</div>
                 <div tabindex="0" class="card-name">
-                    <a href="/#/detail/${restaurant.id}">
+                    <a href="/#/detail/${restaurant.id}" class="resto-name">
                         ${restaurant.name}
                     <a href="/#/detail/${restaurant.id}">
                 </div>

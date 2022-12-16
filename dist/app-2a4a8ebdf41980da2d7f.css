@@ -351,6 +351,11 @@ footer p {
 ul li {
   list-style: none;
 }
+a.resto-name {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
 
 /* RESPONSIVE VIEWPORT */
 
@@ -452,4 +457,4 @@ ul li {
 }
 
 
-/*# sourceMappingURL=app-fa82f3dcc73b116021ab.css.map*/
+/*# sourceMappingURL=app-2a4a8ebdf41980da2d7f.css.map*/
