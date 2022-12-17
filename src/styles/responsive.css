@@ -95,4 +95,8 @@
     width: 19rem;
     margin-bottom: 1.5rem;
   }
+  .detail-restaurant.large {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

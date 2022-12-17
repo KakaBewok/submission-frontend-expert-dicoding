@@ -50,17 +50,12 @@ const createRestaurantDetailTemplate = (restaurant) => `
                 ><br />
                 <button type="submit" id="button-review" tabindex="0"> 
                   Button
-                </button>
+                </button><br /><br />
               </form>
             </div>
             
-            <div class="detail-info" tabindex="0">
-              <h3 tabindex="0">Reviews</h4>
-              <ul>
-                  ${createRestaurantDetailReviewsTemplate(restaurant)}
-              </ul>
-            </div>
-            
+           
+        
 `;
 
 const createRestaurantDetailFoodsTemplate = (restaurant) => {
@@ -89,12 +84,14 @@ const createRestaurantDetailReviewsTemplate = (restaurant) => {
   const reviews = restaurant.customerReviews
     .map(
       (review) => `
-            <li class="name" tabindex="0">${review.name}</li>
-            <li class="review" tabindex="0">"${review.review}"</li>
-            <li class="date" tabindex="0">${review.date}</li>
+          
+            <p class="name" tabindex="0">${review.name}</p>
+            <p class="review" tabindex="0">"${review.review}"</p>
+            <p class="date" tabindex="0">${review.date}</p>
             <br/>
             <hr/>
             <br/>
+      
         `
     )
     .join('\n');
@@ -146,3 +143,12 @@ export {
   createRestaurantDetailDrinksTemplate,
   createRestaurantDetailReviewsTemplate,
 };
+
+// {
+/* <div class="detail-info" tabindex="0">
+<h3 tabindex="0">Reviews</h4>
+<ul>
+    ${createRestaurantDetailReviewsTemplate(restaurant)}
+</ul>
+</div> */
+// }

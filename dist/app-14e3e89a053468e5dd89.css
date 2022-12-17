@@ -487,7 +487,11 @@ a.resto-name {
     width: 19rem;
     margin-bottom: 1.5rem;
   }
+  .detail-restaurant.large {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
-/*# sourceMappingURL=app-331a4190573a8aca684f.css.map*/
+/*# sourceMappingURL=app-14e3e89a053468e5dd89.css.map*/
