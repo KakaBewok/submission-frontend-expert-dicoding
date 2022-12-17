@@ -1,3 +1,6 @@
+/* eslint-disable quotes */
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-alert */
 /* eslint-disable object-curly-newline */
 /* eslint-disable lines-between-class-members */
 import UrlParser from '../routes/url-parser';
@@ -30,8 +33,12 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+    try {
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+    } catch (error) {
+      alert(`Not found url`);
+    }
 
     const skipLinkElement = document.querySelector('#skip');
     skipLinkElement.addEventListener('click', (event) => {

@@ -34,10 +34,31 @@ const createRestaurantDetailTemplate = (restaurant) => `
             </div>
 
             <div class="detail-info" tabindex="0">
-                <h3 tabindex="0">Reviews</h4>
-                <ul>
-                    ${createRestaurantDetailReviewsTemplate(restaurant)}
-                </ul>
+              <h3 tabindex="0">Input Review</h4>
+              <form id="form-input" tabindex="0">
+                <input name="name" type="text" placeholder="Name" required id="input-name" tabindex="0" /><br />
+                <textarea
+                  tabindex="0"
+                  name="review"
+                  id="input-review"
+                  cols="30"
+                  rows="10"
+                  id="form-review"
+                  placeholder="Review"
+                  required
+                ></textarea
+                ><br />
+                <button type="submit" id="button-review" tabindex="0"> 
+                  Button
+                </button>
+              </form>
+            </div>
+            
+            <div class="detail-info" tabindex="0">
+              <h3 tabindex="0">Reviews</h4>
+              <ul>
+                  ${createRestaurantDetailReviewsTemplate(restaurant)}
+              </ul>
             </div>
             
 `;
