@@ -1,3 +1,4 @@
+/* eslint-disable no-inner-declarations */
 /* eslint-disable import/order */
 /* eslint-disable comma-dangle */
 /* eslint-disable quotes */
@@ -53,6 +54,9 @@ const Detail = {
           title: 'Success!',
         });
         form.reset();
+        setTimeout(() => {
+          location.reload(true);
+        }, 1000);
         console.log(response);
       } catch (error) {
         console.log(`Error ${error}`);
