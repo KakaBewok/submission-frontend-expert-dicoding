@@ -54,9 +54,7 @@ const Detail = {
           title: 'Success!',
         });
         form.reset();
-        setTimeout(() => {
-          location.reload(true);
-        }, 1000);
+
         console.log(response);
       } catch (error) {
         console.log(`Error ${error}`);
