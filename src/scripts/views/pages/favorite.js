@@ -14,6 +14,10 @@ const Favorite = {
     const restaurants = await FavoriteResto.getAllResto();
     const restaurantsContainer = document.querySelector('#cards-wrapper');
 
+    if (restaurants.length < 1) {
+      restaurantsContainer.innerText = 'Tidak ada resto yang disukai.';
+    }
+
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML +=
         createRestaurantItemTemplate(restaurant);
