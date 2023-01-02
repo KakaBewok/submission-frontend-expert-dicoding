@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-useless-path-segments */
 import 'regenerator-runtime';
@@ -11,6 +12,11 @@ import '../scripts/views/components/content.js';
 import '../scripts/views/components/shortcut-to-top.js';
 import '../scripts/views/components/skip-to-content.js';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
+const START = 10;
+const NUMBER_OF_IMAGES = 100;
 
 const app = new App({
   button: document.querySelector('#hamburger'),

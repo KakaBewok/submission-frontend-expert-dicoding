@@ -162,6 +162,10 @@ button span:nth-child(3) {
   width: 100%;
   height: 100%;
 }
+.hero-image source {
+  width: 100%;
+  height: 100%;
+}
 
 /* cards */
 #cards .cards-title {
@@ -494,4 +498,4 @@ a.resto-name {
 }
 
 
-/*# sourceMappingURL=app-a7664d3cb68fcb5c3943.css.map*/
+/*# sourceMappingURL=app~d1658f4b-49c0e8ea5797fd1c1d49.css.map*/

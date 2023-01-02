@@ -1,8 +1,12 @@
+/* eslint-disable prefer-destructuring */
+/* eslint-disable operator-linebreak */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -27,11 +31,16 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+          // globOptions: {
+          //   // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+          //   ignore: ['**/images/**'],
+          // },
         },
       ],
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
     }),
+    new BundleAnalyzerPlugin(),
   ],
 };

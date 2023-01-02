@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-use-before-define */
 /* eslint-disable comma-dangle */
 /* eslint-disable arrow-body-style */
@@ -6,9 +7,9 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
      
             <h2 class="detail-title" tabindex="0">${restaurant.name}</h2>
-            <img class="detail-poster" src="${CONFIG.BASE_IMAGE_URL_SMALL}/${
-  restaurant.pictureId
-}"         
+            <img class="lazyload" class="detail-poster" src="${
+              CONFIG.BASE_IMAGE_URL_SMALL
+            }/${restaurant.pictureId}"         
               alt="${restaurant.name}" tabindex="0" />
           
             <div class="detail-overview" tabindex="0">
@@ -101,7 +102,7 @@ const createRestaurantDetailReviewsTemplate = (restaurant) => {
 const createRestaurantItemTemplate = (restaurant) => `
         <div class="card">
             <a href="/#/detail/${restaurant.id}">
-            <img
+            <img class="lazyload"
                 tabindex="0"
                 src="${CONFIG.BASE_IMAGE_URL_MEDIUM}/${restaurant.pictureId}"
                 alt="${restaurant.name}"

@@ -8,11 +8,10 @@ class HeroElement extends HTMLElement {
          <section id="hero">
             <div class="container">
                 <div class="hero-image">
-                <img
-                    tabindex="0"
-                    src="images/heros/hero-image_1.jpg"
-                    alt="hero image"
-                />
+                  <picture >
+                      <source tabindex="0" media="(max-width: 600px)" type="image/webp" srcset="./images/heros/hero-image_1-small.webp">
+                      <img src="./images/heros/hero-image_1-large.webp" alt="Hero">
+                  </picture>
                 </div>
             </div>
         </section>

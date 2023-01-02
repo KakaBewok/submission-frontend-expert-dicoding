@@ -32,3 +32,30 @@ Scenario('liking one resto', async (I) => {
   const likedRestoTitle = await I.grabTextFrom('.card-name');
   assert.strictEqual(firstRestoTitle, likedRestoTitle);
 });
+
+Scenario('unliking one resto', async (I) => {
+  I.see('Tidak ada resto yang disukai.', '#cards-wrapper');
+
+  I.amOnPage('/');
+
+  I.seeElement('.card-name a');
+
+  const firstResto = locate('.card-name a').first();
+  const firstRestoTitle = await I.grabTextFrom(firstResto);
+  I.click(firstResto);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.seeElement('.card');
+  const likedRestoTitle = await I.grabTextFrom('.card-name');
+  assert.strictEqual(firstRestoTitle, likedRestoTitle);
+
+  I.click(likedRestoTitle);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+  I.amOnPage('/#/favorite');
+  I.dontSeeElement('.card');
+  I.dontSeeElement('.card-name');
+});
