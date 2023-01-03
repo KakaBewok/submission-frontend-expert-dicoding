@@ -7,7 +7,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
      
             <h2 class="detail-title" tabindex="0">${restaurant.name}</h2>
-            <img class="lazyload" class="detail-poster" src="${
+            <img class="lazyload" class="detail-poster" data-src="${
               CONFIG.BASE_IMAGE_URL_SMALL
             }/${restaurant.pictureId}"         
               alt="${restaurant.name}" tabindex="0" />
@@ -104,7 +104,7 @@ const createRestaurantItemTemplate = (restaurant) => `
             <a href="/#/detail/${restaurant.id}">
             <img class="lazyload"
                 tabindex="0"
-                src="${CONFIG.BASE_IMAGE_URL_MEDIUM}/${restaurant.pictureId}"
+                data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM}/${restaurant.pictureId}"
                 alt="${restaurant.name}"
             />
             </a>
@@ -144,12 +144,3 @@ export {
   createRestaurantDetailDrinksTemplate,
   createRestaurantDetailReviewsTemplate,
 };
-
-// {
-/* <div class="detail-info" tabindex="0">
-<h3 tabindex="0">Reviews</h4>
-<ul>
-    ${createRestaurantDetailReviewsTemplate(restaurant)}
-</ul>
-</div> */
-// }
