@@ -7,7 +7,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
      
             <h2 class="detail-title" tabindex="0">${restaurant.name}</h2>
-            <img class="lazyload" class="detail-poster" data-src="${
+            <img class="lazyload detail-poster" data-src="${
               CONFIG.BASE_IMAGE_URL_SMALL
             }/${restaurant.pictureId}"         
               alt="${restaurant.name}" tabindex="0" />
